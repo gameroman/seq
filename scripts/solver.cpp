@@ -32,7 +32,7 @@ int max_p[MAXN], max_q[MAXN];
 bool found = false;
 int found_seq[MAXN];
 long long nodes = 0;
-long long node_limit = 25'000'000'000LL;
+long long node_limit = 100'000'000'000LL;
 bool aborted = false;
 
 // Prefix locking state: locks the first (prev_N / 3) elements of prev_best
