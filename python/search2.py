@@ -13,6 +13,13 @@ base_15 = [
     2, 4, 3, 7, 3, 3, 7, 3, 4, 2, 13,
     2, 4, 3, 7, 2, 6, 2, 7, 3, 4, 2, 14,
     2, 4, 3, 7, 2, 5, 2, 8, 3, 4, 4, 2, 15,
+    2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 16,
+    2, 8, 2, 5, 2, 8, 2, 8, 2, 6, 2, 9, 3, 3, 17,
+    2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 18,
+    5, 5, 5, 5, 13, 5, 4, 4, 8, 2, 8, 2, 7, 3, 8, 2, 19,
+    2, 11, 2, 11, 2, 11, 2, 11, 2, 11, 2, 11, 2, 11, 2, 11, 2, 20,
+    2, 9, 2, 7, 2, 6, 2, 9, 2, 9, 2, 7, 2, 7, 2, 10, 3, 3, 21,
+    2, 12, 2, 12, 2, 12, 2, 12, 2, 12, 2, 12, 2, 12, 2, 12, 2, 12, 2, 22
 ]
 
 def full_state(s):
@@ -173,10 +180,10 @@ if __name__ == "__main__":
     over0, unsat0 = verify_state(cur_seq, "init_15")
     assert not over0, f"Input sequence has overshoots: {over0}"
 
-    for h in range(15, 30):
+    for h in range(22, 40):
         print(f"\n================ ADVANCING {h} -> {h+1} ================")
         u = len(cur_seq) - 1
-        nxt_seq, dt = step_single_peak(cur_seq, h, max_len=h + 10, max_time=30.0)
+        nxt_seq, dt = step_single_peak(cur_seq, h, max_len=h + 10, max_time=60.0)
         if nxt_seq is not None:
             valley = nxt_seq[u + 1 :]
             cur_seq = nxt_seq
